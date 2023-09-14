@@ -1,0 +1,78 @@
+* {
+    font-family: ‘Roboto’, sans-serif;
+}
+
+:root {
+    --bz-app-principal: #DBDBD2;
+    --bz-app-header: #009688;
+    --bz-app-success: #D5F9BA;
+    --bz-app-light: #E9EBEB;
+    --bz-app-white: #FFFFFF;
+    --bz-app-focus: #8EDAFC;
+}
+
+body {
+    background: linear-gradient(to top,
+            var(--bz-app-principal) 85%,
+            var(--bz-app-header) 15%)
+}
+
+
+.vh_90 {
+    height: 90vh;
+}
+
+.chats {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.bg_principal {
+    background-color: var(--bz-app-light);
+    flex: 0 0 70px;
+}
+
+.stop_notification {
+    background-color: var(--bz-app-focus);
+}
+
+.bg_light {
+    background-color: var(--bz-app-light);
+}
+
+.bg_white {
+    background-color: var(--bz-app-white);
+}
+
+/* .font_size_md {
+    font-size: 12px;
+} */
+
+.font_size_sm {
+    font-size: 8px;
+}
+
+.bg_whatsapp {
+    background-image: url(../img/mine.jpg);
+    flex-grow: 1;
+}
+
+.w_100 {
+    width: 100%;
+}
+
+.bg_green {
+    background-color: var(--bz-app-success);
+}
+
+.message .badge {
+    min-width: 14rem;
+}
+
+.focus {
+    color: var(--bz-app-focus);
+}
+
+.principal {
+    color: grey;
+}
