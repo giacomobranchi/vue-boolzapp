@@ -67,12 +67,11 @@
                             </div>
                             <!-- contacts -->
                             <div class="bg_white chats">
-                                <div class="d-flex justify-content-between border-bottom">
+                                <div v-for="contact in contacts" class="d-flex justify-content-between border-bottom">
                                     <div class="d-flex p-2">
-                                        <img class="rounded-pill" width="30" height="30" src="./assets/img/avatar_1.jpg"
-                                            alt="">
+                                        <img class="rounded-pill" width="30" height="30" :src="contact.avatar" alt="">
                                         <div class="mx-2">
-                                            <div class="font_size_md">Michele</div>
+                                            <div class="font_size_md">{{contact.name}}</div>
                                             <div class="font_size_sm">Ultimo messaggio inviato</div>
                                         </div>
                                     </div>
