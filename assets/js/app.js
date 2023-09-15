@@ -180,8 +180,8 @@ createApp({
         }
     },
     methods: {
-        changeConv() {
-
+        changeConv(index) {
+            this.active = index;
         }
     }
 }).mount('#app')

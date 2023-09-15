@@ -67,7 +67,7 @@
                             </div>
                             <!-- contacts -->
                             <div class="bg_white chats">
-                                <div @click="changeConv" v-for="contact  in contacts"
+                                <div @click="changeConv(index)" v-for="(contact, index)  in contacts"
                                     class="d-flex justify-content-between border-bottom">
                                     <div class="d-flex p-2">
                                         <img class="rounded-pill" width="30" height="30" :src="contact.avatar" alt="">
@@ -91,9 +91,9 @@
                     <div
                         class="bg_principal p-1 d-flex border-start border-white justify-content-between align-items-center">
                         <div class="d-flex p-2">
-                            <img class="rounded-pill" width="40" height="40" src="./assets/img/avatar_1.jpg" alt="">
+                            <img class="rounded-pill" width="40" height="40" :src="contacts[active].avatar" alt="">
                             <div class="mx-2">
-                                <div class="font_size_md">Michele</div>
+                                <div class="font_size_md">{{contacts[active].name}}</div>
                                 <div class="font_size_sm">Ultimo accesso oggi alle 12.00</div>
                             </div>
                         </div>
