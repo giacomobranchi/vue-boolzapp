@@ -199,7 +199,8 @@ createApp({
 
         sendMessage() {
             this.contacts[this.active].messages.push({ date: '12', message: this.newUserMessage, status: 'sent' })
-            setTimeout(() => this.contacts[this.active].messages.push({ date: '12', message: this.biblePhrases[this.active], status: 'received' }), 1000)
+            setTimeout(() => this.contacts[this.active].messages.push({ date: '12', message: this.biblePhrases[this.active], status: 'received' }), 1000);
+            this.newUserMessage = ''
         },
     },
     computed: {
