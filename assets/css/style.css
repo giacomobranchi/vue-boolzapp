@@ -1,5 +1,8 @@
 * {
     font-family: ‘Roboto’, sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 :root {
@@ -14,7 +17,7 @@
 body {
     background: linear-gradient(to top,
             var(--bz-app-principal) 85%,
-            var(--bz-app-header) 15%)
+            var(--bz-app-header) 15%);
 }
 
 
@@ -55,10 +58,16 @@ body {
 .bg_whatsapp {
     background-image: url(../img/mine.jpg);
     flex-grow: 1;
+    overflow-y: hidden;
 }
 
 .w_100 {
     width: 100%;
+}
+
+.message {
+    max-width: 90%;
+    overflow-wrap: break-word;
 }
 
 .received {

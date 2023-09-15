@@ -61,13 +61,13 @@
                                 <div class="input-group  p-1">
                                     <span class="input-group-text" id="basic-addon1"><i
                                             class="fa-solid fa-magnifying-glass fa-sm"></i></span>
-                                    <input type="text" class="form-control font_size_sm " placeholder="Username"
-                                        aria-label="Username" aria-describedby="basic-addon1">
+                                    <input v-model="search" type="text" class="form-control font_size_sm "
+                                        placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
                                 </div>
                             </div>
                             <!-- contacts -->
                             <div class="bg_white chats">
-                                <div @click="changeConv(index)" v-for="(contact, index)  in contacts"
+                                <div @click="changeConv(index)" v-for="(contact, index)  in filteredContacts"
                                     class="d-flex justify-content-between border-bottom">
                                     <div class="d-flex p-2">
                                         <img class="rounded-pill" width="30" height="30" :src="contact.avatar" alt="">
@@ -110,7 +110,7 @@
                                 <div v-for="message in contacts[active].messages" class="message py-2 pe-4"
                                     :class="[message.status == 'sent' ? flexEnd  : flexStart], [message.status == 'sent' ? 'pe-4'  : 'ps-4']">
                                     <div class=" badge text-black p-2 d-flex flex-column" :class="message.status">
-                                        <div class="align-self-start lh-lg">{{message.message}}</div>
+                                        <div class=" align-self-start lh-lg">{{message.message}}</div>
                                         <div class="align-self-end font_size_sm">{{message.date}}</div>
                                     </div>
                                 </div>

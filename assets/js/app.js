@@ -11,6 +11,18 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            biblePhrases: [
+                'Il saggio ha gli occhi in fronte, ma lo stolto cammina nel buio.',
+                'È più facile che un cammello passi per la cruna di un ago, che un ricco entri nel regno di Dio.',
+                'La sapienza rende il saggio più forte di dieci potenti che governano la città.',
+                'Siate umili come colombe e prudenti come serpenti.',
+                'L’uomo non vive soltanto di pane.',
+                'Un piatto di verdura con l’amore è meglio di un bue grasso con l’odio.',
+                'Vale più la sapienza che le armi da guerra, ma un solo errore può distruggere un bene immenso.',
+                'Tutto il mondo giace sotto il potere del maligno.'
+            ],
+            search: '',
+            timer: '',
             newUserMessage: '',
             active: 0,
             flexEnd: 'align-self-end',
@@ -187,17 +199,15 @@ createApp({
 
         sendMessage() {
             this.contacts[this.active].messages.push({ date: '12', message: this.newUserMessage, status: 'sent' })
+            setTimeout(() => this.contacts[this.active].messages.push({ date: '12', message: this.biblePhrases[this.active], status: 'received' }), 1000)
+        },
+    },
+    computed: {
+        filteredContacts() {
+            return this.contacts.filter(contact => {
+                return contact.name.toLowerCase().includes(this.search.toLowerCase())
+            })
         }
     }
 }).mount('#app')
 
-/* [
-    'Il saggio ha gli occhi in fronte, ma lo stolto cammina nel buio.',
-    'È più facile che un cammello passi per la cruna di un ago, che un ricco entri nel regno di Dio.',
-    'La sapienza rende il saggio più forte di dieci potenti che governano la città.',
-    'Siate umili come colombe e prudenti come serpenti.',
-    'L’uomo non vive soltanto di pane.',
-    'Un piatto di verdura con l’amore è meglio di un bue grasso con l’odio.',
-    'Vale più la sapienza che le armi da guerra, ma un solo errore può distruggere un bene immenso.',
-    'Tutto il mondo giace sotto il potere del maligno.'
-] */
