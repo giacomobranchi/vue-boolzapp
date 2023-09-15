@@ -123,7 +123,8 @@
                                 class="fa-regular fa-face-smile"></i></a>
                         <div class="w_100">
                             <div class="input-group">
-                                <input type="text" class="form-control font_size_sm" placeholder="Scrivi un messaggio"
+                                <input @keydown.enter="sendMessage" v-model="newUserMessage" type="text"
+                                    class="form-control font_size_sm" placeholder="Scrivi un messaggio"
                                     aria-label="Username" aria-describedby="basic-addon1">
                             </div>
                         </div>
