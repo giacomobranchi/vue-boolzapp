@@ -11,6 +11,9 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
+            active: 0,
+            flexEnd: 'align-self-end',
+            flexStart: 'align-self-start',
             contacts: [
                 {
                     name: 'Michele',
@@ -174,6 +177,11 @@ createApp({
                     ],
                 }
             ]
+        }
+    },
+    methods: {
+        changeConv() {
+
         }
     }
 }).mount('#app')

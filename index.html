@@ -67,7 +67,8 @@
                             </div>
                             <!-- contacts -->
                             <div class="bg_white chats">
-                                <div v-for="contact  in contacts" class="d-flex justify-content-between border-bottom">
+                                <div @click="changeConv" v-for="contact  in contacts"
+                                    class="d-flex justify-content-between border-bottom">
                                     <div class="d-flex p-2">
                                         <img class="rounded-pill" width="30" height="30" :src="contact.avatar" alt="">
                                         <div class="mx-2">
@@ -106,22 +107,11 @@
                     <div class="bg_whatsapp row m-0">
                         <div class="col-12 p-0">
                             <div class="d-flex flex-column">
-                                <div class="message align-self-end p-4">
-                                    <div class="badge bg_green text-black p-2 d-flex flex-column">
-                                        <div class="align-self-start lh-lg">Hai portato a spasso il cane?</div>
-                                        <div class="align-self-end font_size_sm">15:30</div>
-                                    </div>
-                                </div>
-                                <div class="message align-self-end p-4">
-                                    <div class="badge bg_green text-black p-2 d-flex flex-column">
-                                        <div class="align-self-start lh-lg">Ricordati di stendere i panni</div>
-                                        <div class="align-self-end font_size_sm">15:45</div>
-                                    </div>
-                                </div>
-                                <div class="message align-self-start p-4">
-                                    <div class="badge bg_white text-black p-2 d-flex flex-column">
-                                        <div class="align-self-start lh-lg">Tutto fatto!</div>
-                                        <div class="align-self-end font_size_sm">16:15</div>
+                                <div v-for="message in contacts[active].messages" class="message py-2 pe-4"
+                                    :class="[message.status == 'sent' ? flexEnd  : flexStart], [message.status == 'sent' ? 'pe-4'  : 'ps-4']">
+                                    <div class=" badge text-black p-2 d-flex flex-column" :class="message.status">
+                                        <div class="align-self-start lh-lg">{{message.message}}</div>
+                                        <div class="align-self-end font_size_sm">{{message.date}}</div>
                                     </div>
                                 </div>
                             </div>
