@@ -107,11 +107,13 @@
                     <div class="bg_whatsapp row m-0">
                         <div class="col-12 p-0" style="height: 100%; overflow-y: auto;">
                             <div class="d-flex flex-column">
-                                <div v-for="message in contacts[active].messages" class="message py-2 pe-4"
+                                <div v-for="message in contacts[active].messages" class="message py-2 pe-4 "
                                     :class="[message.status == 'sent' ? flexEnd  : flexStart], [message.status == 'sent' ? 'pe-4'  : 'ps-4']">
                                     <div class=" badge text-black p-2 d-flex flex-column" :class="message.status">
-                                        <div class=" align-self-start lh-lg">{{message.message}}</div>
-                                        <div class="align-self-end font_size_sm">{{message.date}}</div>
+                                        <div class=" align-self-start">{{message.message}}</div>
+                                        <div class="align-self-end font_size_sm">{{message.date.substring(11,16)}}
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -136,7 +138,9 @@
         </div>
     </div>
 
-
+    <script src="
+https://cdn.jsdelivr.net/npm/luxon@3.4.3/build/global/luxon.min.js
+"></script>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"

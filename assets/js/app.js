@@ -22,6 +22,7 @@ createApp({
                 'Tutto il mondo giace sotto il potere del maligno.'
             ],
             search: '',
+
             timer: '',
             newUserMessage: '',
             active: 0,
@@ -198,8 +199,9 @@ createApp({
         },
 
         sendMessage() {
-            this.contacts[this.active].messages.push({ date: '12', message: this.newUserMessage, status: 'sent' });
-            setTimeout(() => this.contacts[this.active].messages.push({ date: '12', message: this.biblePhrases[this.active], status: 'received' }), 1000);
+            let currentTime = String(luxon.DateTime.now());
+            this.contacts[this.active].messages.push({ date: currentTime, message: this.newUserMessage, status: 'sent' });
+            setTimeout(() => this.contacts[this.active].messages.push({ date: currentTime, message: this.biblePhrases[this.active], status: 'received' }), 1000);
             this.newUserMessage = '';
         },
     },
@@ -211,4 +213,3 @@ createApp({
         }
     }
 }).mount('#app')
-
