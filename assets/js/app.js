@@ -206,6 +206,10 @@ createApp({
         },
         openDropdown(id) {
             document.getElementById(`drop${id}`).classList.toggle('d-none')
+        },
+        removeMsg(index) {
+            this.contacts[this.active].messages.splice(index, 1)
+            console.log(this.contacts[this.active].messages);
         }
     },
     computed: {
