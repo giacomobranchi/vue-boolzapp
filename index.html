@@ -22,9 +22,9 @@
 </head>
 
 <body>
-    <div id="app">
-        <div class="container my-5 vh_90">
-            <div class="row" style="height: 100%;">
+    <div class="pt-5" id="app">
+        <div class="container vh_90 d-flex justify-content-center">
+            <div class="row" style="height: 100%; width: 100%;">
                 <div class="col-4">
                     <div class="row" style="height: 100%;">
                         <div class="col-12 p-0 d-flex flex-column">
@@ -70,11 +70,11 @@
                                 <div @click="changeConv(index)" v-for="(contact, index)  in filteredContacts"
                                     class="d-flex justify-content-between border-bottom">
                                     <div class="d-flex p-2">
-                                        <img class="rounded-pill" width="30" height="30" :src="contact.avatar" alt="">
+                                        <img class="rounded-pill" width="40" height="40" :src="contact.avatar" alt="">
                                         <div class="mx-2">
-                                            <div class="font_size_md">{{contact.name}}</div>
-                                            <div class="font_size_sm">
-                                                {{contact.messages[contact.messages.length-1].message}}
+                                            <div><strong>{{contact.name}}</strong></div>
+                                            <div class="font_size_sm text-body-secondary">
+                                                <small>{{contact.messages[contact.messages.length-1].message}}</small>
                                             </div>
                                         </div>
                                     </div>
@@ -86,7 +86,7 @@
                     </div>
 
                 </div>
-                <div class="col-8 p-0 d-flex flex-column">
+                <div class="col-8 p-0 d-flex flex-column" style="height: 100%;">
                     <!-- right head -->
                     <div
                         class="bg_principal p-1 d-flex border-start border-white justify-content-between align-items-center">
@@ -105,7 +105,7 @@
                     </div>
                     <!-- right body -->
                     <div class="bg_whatsapp row m-0">
-                        <div class="col-12 p-0">
+                        <div class="col-12 p-0" style="height: 100%; overflow-y: auto;">
                             <div class="d-flex flex-column">
                                 <div v-for="message in contacts[active].messages" class="message py-2 pe-4"
                                     :class="[message.status == 'sent' ? flexEnd  : flexStart], [message.status == 'sent' ? 'pe-4'  : 'ps-4']">
