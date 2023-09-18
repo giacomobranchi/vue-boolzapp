@@ -204,6 +204,9 @@ createApp({
             setTimeout(() => this.contacts[this.active].messages.push({ date: currentTime, message: this.biblePhrases[this.active], status: 'received' }), 1000);
             this.newUserMessage = '';
         },
+        openDropdown(id) {
+            document.getElementById(`drop${id}`).classList.toggle('d-none')
+        }
     },
     computed: {
         filteredContacts() {
